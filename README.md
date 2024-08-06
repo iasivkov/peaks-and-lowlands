@@ -5,4 +5,4 @@ The algorithm was proposed by Andrey Akinshin. See for more details: https://aak
 
 ## Using examples
 
-For using examples see documentaion section "Examples"
+For using examples see documentaion section "Examples", example_script.py and example_notebook.ipynb
