@@ -1,4 +1,4 @@
-# peaks-and-lowlands
+# Peaks-and-lowlands
 
 Python realization of the lowlands algorithm for multimodality detection, based on quantile-respectful density estimation.
 
