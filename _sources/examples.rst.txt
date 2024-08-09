@@ -1,0 +1,7 @@
+Examples
+======================
+
+.. toctree::
+    example_script
+    example_notebook
+    :maxdepth: 1

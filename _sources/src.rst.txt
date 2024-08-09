@@ -1,0 +1,24 @@
+API reference
+=============
+
+.. automodule:: src
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+src.landshaft module
+--------------------
+
+.. automodule:: src.landshaft
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+src.utils module
+----------------
+
+.. automodule:: src.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,31 @@
+.. peaks-and-lowlands documentation master file, created by
+   sphinx-quickstart on Tue Aug  6 11:48:01 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Peaks-and-lowlands
+==================
+
+Python realization of the lowlands algorithm for multimodality detection, based on quantile-respectful density estimation.
+
+The algorithm was proposed by Andrey Akinshin. See for more details: https://aakinshin.net/posts/lowland-multimodality-detection/
+
+.. rubric:: General description of the algorithm
+   :heading-level: 2
+
+.. hlist::
+   :columns: 1
+
+   * Determine the quantiles based on the Harrell-Davis estimator.
+   * Using these quantiles, estimate the density function. 
+   * Locate all the maxima (peaks) in the estimated density function.
+   * Fill the areas between peaks with "water," with the water level defined by the height of the lower peak.
+   * Ponds where the ratio of the water area to the area of the ground under the water exceeds a certain threshold are marked as "lowlands." These ponds cannot be merged with others. 
+   * For each pond, starting from the left, check if it can merge with the next pond (the left peak of the current pond must be higher than the right peak of the next pond, and the next pond must not be a lowland). If the conditions are met, merge the next pond with the current one, adjusting the water level based on the new right peak.
+
+.. toctree::
+   examples
+   src
+   :maxdepth: 2
+   :caption: Contents:
+

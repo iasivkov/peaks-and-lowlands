@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API reference &#8212; peaks-and-lowlands 0.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example Nootebook" href="example_notebook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/peaks_and_lowlands_logo.png" class="logo__image only-light" alt="peaks-and-lowlands 0.1.1 documentation - Home"/>
+    <script>document.write(`<img src="_static/peaks_and_lowlands_logo.png" class="logo__image only-dark" alt="peaks-and-lowlands 0.1.1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">API reference</a><ul>
+<li><a class="reference internal" href="#module-src.landshaft">src.landshaft module</a><ul>
+<li><a class="reference internal" href="#src.landshaft.Landshaft"><code class="docutils literal notranslate"><span class="pre">Landshaft</span></code></a><ul>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.build_landshaft"><code class="docutils literal notranslate"><span class="pre">build_landshaft()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.get_extremums"><code class="docutils literal notranslate"><span class="pre">get_extremums()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.get_ground"><code class="docutils literal notranslate"><span class="pre">get_ground()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.get_modes"><code class="docutils literal notranslate"><span class="pre">get_modes()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.get_peaks_and_ponds"><code class="docutils literal notranslate"><span class="pre">get_peaks_and_ponds()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.get_quantiles"><code class="docutils literal notranslate"><span class="pre">get_quantiles()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.merge_highland_ponds"><code class="docutils literal notranslate"><span class="pre">merge_highland_ponds()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.plot_ground"><code class="docutils literal notranslate"><span class="pre">plot_ground()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.plot_hds"><code class="docutils literal notranslate"><span class="pre">plot_hds()</span></code></a></li>
+<li><a class="reference internal" href="#src.landshaft.Landshaft.plot_ponds_and_peaks"><code class="docutils literal notranslate"><span class="pre">plot_ponds_and_peaks()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.landshaft.is_notebook"><code class="docutils literal notranslate"><span class="pre">is_notebook()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.utils">src.utils module</a><ul>
+<li><a class="reference internal" href="#src.utils.Bin"><code class="docutils literal notranslate"><span class="pre">Bin</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Extremum"><code class="docutils literal notranslate"><span class="pre">Extremum</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray"><code class="docutils literal notranslate"><span class="pre">ExtremumArray</span></code></a><ul>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.argsort"><code class="docutils literal notranslate"><span class="pre">argsort()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.diff"><code class="docutils literal notranslate"><span class="pre">diff()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.get_bins_height"><code class="docutils literal notranslate"><span class="pre">get_bins_height()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.get_bins_start"><code class="docutils literal notranslate"><span class="pre">get_bins_start()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.get_bins_width"><code class="docutils literal notranslate"><span class="pre">get_bins_width()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.ExtremumArray.signs"><code class="docutils literal notranslate"><span class="pre">signs()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.utils.Ground"><code class="docutils literal notranslate"><span class="pre">Ground</span></code></a><ul>
+<li><a class="reference internal" href="#src.utils.Ground.add_bin"><code class="docutils literal notranslate"><span class="pre">add_bin()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.get_area"><code class="docutils literal notranslate"><span class="pre">get_area()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.get_bins_height"><code class="docutils literal notranslate"><span class="pre">get_bins_height()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.get_bins_start"><code class="docutils literal notranslate"><span class="pre">get_bins_start()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.get_bins_width"><code class="docutils literal notranslate"><span class="pre">get_bins_width()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.get_water_area"><code class="docutils literal notranslate"><span class="pre">get_water_area()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Ground.merge"><code class="docutils literal notranslate"><span class="pre">merge()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src.utils.Pond"><code class="docutils literal notranslate"><span class="pre">Pond</span></code></a><ul>
+<li><a class="reference internal" href="#src.utils.Pond.check_lowland"><code class="docutils literal notranslate"><span class="pre">check_lowland()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Pond.get_underwater_ground"><code class="docutils literal notranslate"><span class="pre">get_underwater_ground()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Pond.get_water_and_underwater_area"><code class="docutils literal notranslate"><span class="pre">get_water_and_underwater_area()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Pond.is_lowland"><code class="docutils literal notranslate"><span class="pre">is_lowland()</span></code></a></li>
+<li><a class="reference internal" href="#src.utils.Pond.merge"><code class="docutils literal notranslate"><span class="pre">merge()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">API reference</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-src">
+<span id="api-reference"></span><h1>API reference<a class="headerlink" href="#module-src" title="Link to this heading">#</a></h1>
+<section id="module-src.landshaft">
+<span id="src-landshaft-module"></span><h2>src.landshaft module<a class="headerlink" href="#module-src.landshaft" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.landshaft.</span></span><span class="sig-name descname"><span class="pre">Landshaft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A main class, it provide general lowlands algorithm for multimodality detection,
+based on quantile-respectful density estimation. The algorithm was proposed by
+Andrey Akinshin. See for more details: <a class="reference external" href="https://aakinshin.net/posts/lowland-multimodality-detection/">https://aakinshin.net/posts/lowland-multimodality-detection/</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array-like</em>) – Input data for analysis.</p></li>
+<li><p><strong>q_num</strong> (<em>int</em>) – Number of quantiles to use.</p></li>
+<li><p><strong>threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Threshold for determining lowland ponds, by default 0.5</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.build_landshaft">
+<span class="sig-name descname"><span class="pre">build_landshaft</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.build_landshaft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.build_landshaft" title="Link to this definition">#</a></dt>
+<dd><p>The main function of class providing general logic of algorithm.
+Constructs the landshaft by calculating quantiles, building the ground,
+identifying extremums, peaks, and ponds, merging highland ponds, and determining modes.</p>
+<p>This method follows a series of steps to build the landshaft:</p>
+<ul class="simple">
+<li><p>Calculate quantiles using <cite>get_quantiles()</cite>.</p></li>
+<li><p>Construct the ground from the quantiles using <cite>get_ground()</cite>.</p></li>
+<li><p>Identify extremums in the ground using <cite>get_extremums()</cite>.</p></li>
+<li><p>Determine peaks and ponds using <cite>get_peaks_and_ponds()</cite>.</p></li>
+<li><p>Merge highland ponds based on certain conditions using <cite>merge_highland_ponds()</cite>.</p></li>
+<li><p>Finally, identify modes using <cite>get_modes()</cite>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.get_extremums">
+<span class="sig-name descname"><span class="pre">get_extremums</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.get_extremums"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.get_extremums" title="Link to this definition">#</a></dt>
+<dd><p>Identify extremum points in the ground object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.get_ground">
+<span class="sig-name descname"><span class="pre">get_ground</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.get_ground"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.get_ground" title="Link to this definition">#</a></dt>
+<dd><p>Create Ground object with bins defined by quantiles.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.get_modes">
+<span class="sig-name descname"><span class="pre">get_modes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.utils.ExtremumArray" title="src.utils.ExtremumArray"><span class="pre">ExtremumArray</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#src.utils.ExtremumArray" title="src.utils.ExtremumArray"><span class="pre">ExtremumArray</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.get_modes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.get_modes" title="Link to this definition">#</a></dt>
+<dd><p>Identify modes and minimum points between modes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.get_peaks_and_ponds">
+<span class="sig-name descname"><span class="pre">get_peaks_and_ponds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.get_peaks_and_ponds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.get_peaks_and_ponds" title="Link to this definition">#</a></dt>
+<dd><p>Identify peaks and ponds in the extremum points.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.get_quantiles">
+<span class="sig-name descname"><span class="pre">get_quantiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.get_quantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.get_quantiles" title="Link to this definition">#</a></dt>
+<dd><p>Calculate quantiles of the input data and store Harrell-Davis estimates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.merge_highland_ponds">
+<span class="sig-name descname"><span class="pre">merge_highland_ponds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.merge_highland_ponds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.merge_highland_ponds" title="Link to this definition">#</a></dt>
+<dd><p>Merge ponds in highland areas.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.plot_ground">
+<span class="sig-name descname"><span class="pre">plot_ground</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_terminal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Axes</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.plot_ground"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.plot_ground" title="Link to this definition">#</a></dt>
+<dd><p>Plot the ground landshaft.</p>
+<p>This method plots the ground landshaft based on bin starts, widths, and heights.
+It waits for user input and then closes the plot and returns None if <cite>is_terminal</cite> is True.
+And it does not close the plot and returns a pyplot.Axes object for further plotting otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>is_terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the function will wait for user input and then close the plot.
+If False it does not close the plot and returns a pyplot.Axes object.
+The default is False.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Axes object of the plot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>plt.Axes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.plot_hds">
+<span class="sig-name descname"><span class="pre">plot_hds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.plot_hds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.plot_hds" title="Link to this definition">#</a></dt>
+<dd><p>Plot the Harrell-Davis estimates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.landshaft.Landshaft.plot_ponds_and_peaks">
+<span class="sig-name descname"><span class="pre">plot_ponds_and_peaks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#Landshaft.plot_ponds_and_peaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.Landshaft.plot_ponds_and_peaks" title="Link to this definition">#</a></dt>
+<dd><p>Plot the ponds and peaks on the landscape.</p>
+<p>This method plots the density of the ground and overlays the positions of
+the ponds and peaks. Ponds are colored based on whether they are lowland
+or highland, and peaks are marked with green asterisks. Minimum points
+between modes are marked with red asterisks.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.landshaft.is_notebook">
+<span class="sig-prename descclassname"><span class="pre">src.landshaft.</span></span><span class="sig-name descname"><span class="pre">is_notebook</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/src/landshaft.html#is_notebook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.landshaft.is_notebook" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-src.utils">
+<span id="src-utils-module"></span><h2>src.utils module<a class="headerlink" href="#module-src.utils" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.utils.Bin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">Bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#Bin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Bin" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a histogram bin with a start position, width, and height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – The starting position of the bin.</p></li>
+<li><p><strong>width</strong> (<em>float</em>) – The width of the bin.</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – The height of the bin.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.utils.Extremum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">Extremum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><span class="pre">Bin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#Extremum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Extremum" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents an extremum with a bin and a sign.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bin</strong> (<a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><em>Bin</em></a>) – The bin associated with the extremum.</p></li>
+<li><p><strong>sign</strong> (<em>int</em>) – The sign of the extremum (e.g., -1 for minimum, 1 for maximum).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">ExtremumArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><span class="pre">Extremum</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing an array of Extremum objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>array</strong> (<em>Iterable</em><em>[</em><a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><em>Extremum</em></a><em>]</em>) – An iterable of Extremum objects.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.argsort">
+<span class="sig-name descname"><span class="pre">argsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'start'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.argsort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.argsort" title="Link to this definition">#</a></dt>
+<dd><p>Get the indices that would sort the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>str</em><em>, </em><em>optional</em>) – The order to sort by (‘start’ or ‘height’), by default ‘start’.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array of indices that would sort the array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.diff">
+<span class="sig-name descname"><span class="pre">diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'height'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#src.utils.ExtremumArray" title="src.utils.ExtremumArray"><span class="pre">ExtremumArray</span></a></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.diff" title="Link to this definition">#</a></dt>
+<dd><p>Compute the n-th discrete difference along the specified dimension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<em>str</em><em>, </em><em>optional</em>) – The dimension along which the difference is computed, by default ‘height’.</p></li>
+<li><p><strong>n</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of times values are differenced, by default 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The array of differences as ExtremumArray.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#src.utils.ExtremumArray" title="src.utils.ExtremumArray">ExtremumArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.get_bins_height">
+<span class="sig-name descname"><span class="pre">get_bins_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.get_bins_height"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.get_bins_height" title="Link to this definition">#</a></dt>
+<dd><p>Get the heights of the bins in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Array of heights.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.get_bins_start">
+<span class="sig-name descname"><span class="pre">get_bins_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.get_bins_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.get_bins_start" title="Link to this definition">#</a></dt>
+<dd><p>Get the start positions of the bins in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Array of start positions.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.get_bins_width">
+<span class="sig-name descname"><span class="pre">get_bins_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.get_bins_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.get_bins_width" title="Link to this definition">#</a></dt>
+<dd><p>Get the widths of the bins in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Array of widths.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.ExtremumArray.signs">
+<span class="sig-name descname"><span class="pre">signs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#ExtremumArray.signs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.ExtremumArray.signs" title="Link to this definition">#</a></dt>
+<dd><p>Get the signs of the extremum objects in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Array of signs.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.utils.Ground">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">Ground</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><span class="pre">Bin</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#Ground"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a collection of bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bins</strong> (<em>Iterable</em><em>[</em><a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><em>Bin</em></a><em>]</em>) – The bins that make up the ground.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.add_bin">
+<span class="sig-name descname"><span class="pre">add_bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><span class="pre">Bin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.add_bin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.add_bin" title="Link to this definition">#</a></dt>
+<dd><p>Add a bin to the ground.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bin</strong> (<a class="reference internal" href="#src.utils.Bin" title="src.utils.Bin"><em>Bin</em></a>) – The bin to be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.get_area">
+<span class="sig-name descname"><span class="pre">get_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.get_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.get_area" title="Link to this definition">#</a></dt>
+<dd><p>Get the area of all bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The area of all bins.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.get_bins_height">
+<span class="sig-name descname"><span class="pre">get_bins_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.get_bins_height"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.get_bins_height" title="Link to this definition">#</a></dt>
+<dd><p>Get the heights of the bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The heights of the bins.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.get_bins_start">
+<span class="sig-name descname"><span class="pre">get_bins_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.get_bins_start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.get_bins_start" title="Link to this definition">#</a></dt>
+<dd><p>Get the start positions of the bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The start positions of the bins.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.get_bins_width">
+<span class="sig-name descname"><span class="pre">get_bins_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.get_bins_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.get_bins_width" title="Link to this definition">#</a></dt>
+<dd><p>Get the widths of the bins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The widths of the bins.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.get_water_area">
+<span class="sig-name descname"><span class="pre">get_water_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#Ground.get_water_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.get_water_area" title="Link to this definition">#</a></dt>
+<dd><p>Get the area lower water level and upper then bins tops.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The area lower water level and upper then bins tops.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Ground.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Ground" title="src.utils.Ground"><span class="pre">Ground</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Ground.merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Ground.merge" title="Link to this definition">#</a></dt>
+<dd><p>Merge another ground into this ground.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#src.utils.Ground" title="src.utils.Ground"><em>Ground</em></a>) – The other ground to be merged.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.utils.Pond">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">Pond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_peak</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><span class="pre">Extremum</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_peak</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><span class="pre">Extremum</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Ground" title="src.utils.Ground"><span class="pre">Ground</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#Pond"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a pond defined by start and end peaks, ground, and a threshold.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_peak</strong> (<a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><em>Extremum</em></a>) – The starting peak of the pond.</p></li>
+<li><p><strong>end_peak</strong> (<a class="reference internal" href="#src.utils.Extremum" title="src.utils.Extremum"><em>Extremum</em></a>) – The ending peak of the pond.</p></li>
+<li><p><strong>ground</strong> (<a class="reference internal" href="#src.utils.Ground" title="src.utils.Ground"><em>Ground</em></a>) – The ground on which the pond is situated.</p></li>
+<li><p><strong>threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The threshold for determining if the pond is a lowland, by default 0.5.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Pond.check_lowland">
+<span class="sig-name descname"><span class="pre">check_lowland</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Pond.check_lowland"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond.check_lowland" title="Link to this definition">#</a></dt>
+<dd><p>Check if the pond is a lowland based on the water and underwater areas.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Pond.get_underwater_ground">
+<span class="sig-name descname"><span class="pre">get_underwater_ground</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Pond.get_underwater_ground"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond.get_underwater_ground" title="Link to this definition">#</a></dt>
+<dd><p>Get the part of the ground that is underwater.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Pond.get_water_and_underwater_area">
+<span class="sig-name descname"><span class="pre">get_water_and_underwater_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Pond.get_water_and_underwater_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond.get_water_and_underwater_area" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the water and underwater area of the pond.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Pond.is_lowland">
+<span class="sig-name descname"><span class="pre">is_lowland</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/src/utils.html#Pond.is_lowland"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond.is_lowland" title="Link to this definition">#</a></dt>
+<dd><p>Determine if the pond is a lowland.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the pond is a lowland, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.utils.Pond.merge">
+<span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#src.utils.Pond" title="src.utils.Pond"><span class="pre">Pond</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/utils.html#Pond.merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.Pond.merge" title="Link to this definition">#</a></dt>
+<dd><p>Merge another pond into this pond.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#src.utils.Pond" title="src.utils.Pond"><em>Pond</em></a>) – The other pond to be merged.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="example_notebook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Example Nootebook</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-src.landshaft">src.landshaft module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft"><code class="docutils literal notranslate"><span class="pre">Landshaft</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.build_landshaft"><code class="docutils literal notranslate"><span class="pre">build_landshaft()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.get_extremums"><code class="docutils literal notranslate"><span class="pre">get_extremums()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.get_ground"><code class="docutils literal notranslate"><span class="pre">get_ground()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.get_modes"><code class="docutils literal notranslate"><span class="pre">get_modes()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.get_peaks_and_ponds"><code class="docutils literal notranslate"><span class="pre">get_peaks_and_ponds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.get_quantiles"><code class="docutils literal notranslate"><span class="pre">get_quantiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.merge_highland_ponds"><code class="docutils literal notranslate"><span class="pre">merge_highland_ponds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.plot_ground"><code class="docutils literal notranslate"><span class="pre">plot_ground()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.plot_hds"><code class="docutils literal notranslate"><span class="pre">plot_hds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.Landshaft.plot_ponds_and_peaks"><code class="docutils literal notranslate"><span class="pre">plot_ponds_and_peaks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.landshaft.is_notebook"><code class="docutils literal notranslate"><span class="pre">is_notebook()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-src.utils">src.utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Bin"><code class="docutils literal notranslate"><span class="pre">Bin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Extremum"><code class="docutils literal notranslate"><span class="pre">Extremum</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray"><code class="docutils literal notranslate"><span class="pre">ExtremumArray</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.argsort"><code class="docutils literal notranslate"><span class="pre">argsort()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.diff"><code class="docutils literal notranslate"><span class="pre">diff()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.get_bins_height"><code class="docutils literal notranslate"><span class="pre">get_bins_height()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.get_bins_start"><code class="docutils literal notranslate"><span class="pre">get_bins_start()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.get_bins_width"><code class="docutils literal notranslate"><span class="pre">get_bins_width()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.ExtremumArray.signs"><code class="docutils literal notranslate"><span class="pre">signs()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground"><code class="docutils literal notranslate"><span class="pre">Ground</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.add_bin"><code class="docutils literal notranslate"><span class="pre">add_bin()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.get_area"><code class="docutils literal notranslate"><span class="pre">get_area()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.get_bins_height"><code class="docutils literal notranslate"><span class="pre">get_bins_height()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.get_bins_start"><code class="docutils literal notranslate"><span class="pre">get_bins_start()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.get_bins_width"><code class="docutils literal notranslate"><span class="pre">get_bins_width()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.get_water_area"><code class="docutils literal notranslate"><span class="pre">get_water_area()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Ground.merge"><code class="docutils literal notranslate"><span class="pre">merge()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond"><code class="docutils literal notranslate"><span class="pre">Pond</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond.check_lowland"><code class="docutils literal notranslate"><span class="pre">check_lowland()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond.get_underwater_ground"><code class="docutils literal notranslate"><span class="pre">get_underwater_ground()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond.get_water_and_underwater_area"><code class="docutils literal notranslate"><span class="pre">get_water_and_underwater_area()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond.is_lowland"><code class="docutils literal notranslate"><span class="pre">is_lowland()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src.utils.Pond.merge"><code class="docutils literal notranslate"><span class="pre">merge()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/src.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ivan Sivkov.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

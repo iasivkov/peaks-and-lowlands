@@ -1,0 +1,14 @@
+Example script
+======================
+
+.. automodule:: example_script
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. role:: raw-html(raw)
+   :format: html
+
+.. literalinclude:: example_script.py
+
+.. seealso:: same example in ipynb format here :raw-html:`&rdsh;`
