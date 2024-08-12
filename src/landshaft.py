@@ -24,6 +24,7 @@ class Landshaft:
         self.q_num = q_num
         self.threshold = threshold
 
+
     @classmethod
     def _hd(cls, x: np.ndarray, q: float = 0.5) -> float:
         """
@@ -124,30 +125,34 @@ class Landshaft:
         Identify modes and minimum points between modes.
         """
         lowland_ponds = [pond for pond in self.ponds if pond.is_lowland()]
-        between_lowland = np.array(
-            [[self.ground.get_bins_start()[0], lowland_ponds[0].start_peak.start + lowland_ponds[0].start_peak.width / 2]] +
-            [[lowland_ponds[i].end_peak.start, lowland_ponds[i + 1].start_peak.start + lowland_ponds[i + 1].start_peak.width / 2]
-             for i in range(len(lowland_ponds) - 1)] +
-            [[lowland_ponds[-1].end_peak.start, (self.ground.get_bins_start() + self.ground.get_bins_width() / 2)[-1]]]
-        )
-        peaks_start = self.peaks.get_bins_start().reshape(-1, 1)
-        condition = (peaks_start >= between_lowland[:, 0]) & (peaks_start < between_lowland[:, 1])
-        candidates_idx = condition.sum(axis=1).astype(bool)
-        candidates_group = condition[candidates_idx].argmax(axis=1)
+        if not lowland_ponds:
+            modes = ExtremumArray([self.peaks[np.argmax(self.peaks.get_bins_height())[0]]])
+            min_between_modes = None
+        else:    
+            between_lowland = np.array(
+                [[self.ground.get_bins_start()[0], lowland_ponds[0].start_peak.start + lowland_ponds[0].start_peak.width / 2]] +
+                [[lowland_ponds[i].end_peak.start, lowland_ponds[i + 1].start_peak.start + lowland_ponds[i + 1].start_peak.width / 2]
+                for i in range(len(lowland_ponds) - 1)] +
+                [[lowland_ponds[-1].end_peak.start, (self.ground.get_bins_start() + self.ground.get_bins_width() / 2)[-1]]]
+            )
+            peaks_start = self.peaks.get_bins_start().reshape(-1, 1)
+            condition = (peaks_start >= between_lowland[:, 0]) & (peaks_start < between_lowland[:, 1])
+            candidates_idx = condition.sum(axis=1).astype(bool)
+            candidates_group = condition[candidates_idx].argmax(axis=1)
 
-        a_max_height = [np.argmax(x) for x in np.split(self.peaks.get_bins_height()[candidates_idx],
-                                                        np.unique(candidates_group, return_index=True)[1][1:])]
+            a_max_height = [np.argmax(x) for x in np.split(self.peaks.get_bins_height()[candidates_idx],
+                                                            np.unique(candidates_group, return_index=True)[1][1:])]
 
-        modes = ExtremumArray([x[max_idx] for x, max_idx in zip(np.split(self.peaks[candidates_idx],
-                                                            np.unique(candidates_group, return_index=True)[1][1:]), a_max_height)])
+            modes = ExtremumArray([x[max_idx] for x, max_idx in zip(np.split(self.peaks[candidates_idx],
+                                                                np.unique(candidates_group, return_index=True)[1][1:]), a_max_height)])
 
-        min_between_modes = ExtremumArray([
-            self.extremums[(pond.start_peak.start < self.extremums.get_bins_start()) & 
-                           (self.extremums.get_bins_start() < pond.end_peak.start)][
-                np.argmin(self.extremums[(pond.start_peak.start < self.extremums.get_bins_start()) & 
-                                         (self.extremums.get_bins_start() < pond.end_peak.start)].get_bins_height())
-            ] for pond in lowland_ponds
-        ])
+            min_between_modes = ExtremumArray([
+                self.extremums[(pond.start_peak.start < self.extremums.get_bins_start()) & 
+                            (self.extremums.get_bins_start() < pond.end_peak.start)][
+                    np.argmin(self.extremums[(pond.start_peak.start < self.extremums.get_bins_start()) & 
+                                            (self.extremums.get_bins_start() < pond.end_peak.start)].get_bins_height())
+                ] for pond in lowland_ponds
+            ])
 
         self.modes, self.min_between_modes = modes, min_between_modes
     

@@ -168,3 +168,5 @@ docs/Makefile
 docs/make.bat
 docs/build/doctrees
 source/
+
+docs.sh
