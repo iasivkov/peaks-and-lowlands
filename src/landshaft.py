@@ -26,7 +26,7 @@ class Landshaft:
 
 
     @classmethod
-    def _hd(cls, x: np.ndarray, q: float = 0.5) -> float:
+    def _hd(cls, x: np.ndarray, q: float = 0.5, eps=1e-6) -> float:
         """
         Calculate the Harrell-Davis quantile estimate.
 
@@ -44,8 +44,9 @@ class Landshaft:
         """
         if q == 0:
             return x[0]
-        if q == 1:
+        if q > 1-eps and q <1+eps:
             return x[-1]
+        
         n = x.shape[0]
         m1 = (n + 1) * q
         m2 = (n + 1) * (1 - q)
@@ -59,8 +60,9 @@ class Landshaft:
         Calculate quantiles of the input data and store Harrell-Davis estimates.
         """
         step = 1 / self.q_num
-        quantiles = np.arange(0.0, 1.0 + step, step).tolist()
-        hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q))
+
+        quantiles = np.arange(0.0, 1.0 + step/10, step).tolist()
+        hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q, eps=step/10))
         self.hds = hd_v(quantiles)
 
     def get_ground(self) -> None:
@@ -137,6 +139,7 @@ class Landshaft:
                 for i in range(len(lowland_ponds) - 1)] +
                 [[lowland_ponds[-1].end_peak.start, (self.ground.get_bins_start() + self.ground.get_bins_width() / 2)[-1]]]
             )
+
             peaks_start = self.peaks.get_bins_start().reshape(-1, 1)
             condition = (peaks_start >= between_lowland[:, 0]) & (peaks_start < between_lowland[:, 1])
             candidates_idx = condition.sum(axis=1).astype(bool)
