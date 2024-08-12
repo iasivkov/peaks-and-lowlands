@@ -20,7 +20,7 @@ class Landshaft:
     """
     
     def __init__(self, x: np.ndarray, q_num: int, threshold: float = 0.5) -> None:
-        self.x = x
+        self.x = np.sort(x)
         self.q_num = q_num
         self.threshold = threshold
 
@@ -42,7 +42,6 @@ class Landshaft:
         float
             The Harrell-Davis quantile estimate.
         """
-        x = np.sort(x)
         if q == 0:
             return x[0]
         if q == 1:
