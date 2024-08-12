@@ -1,5 +1,10 @@
 import numpy as np
 from scipy.stats import beta
+
+import platform
+
+from multiprocessing import Pool, cpu_count
+
 import matplotlib.pyplot as plt
 from .utils import *
 
@@ -62,8 +67,22 @@ class Landshaft:
         step = 1 / self.q_num
 
         quantiles = np.arange(0.0, 1.0 + step/10, step).tolist()
-        hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q, eps=step/10))
-        self.hds = hd_v(quantiles)
+
+        if platform.system() != "Windows":
+            global hd_v
+            def hd_v(q):
+                # hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q, eps=step/10))
+                print(q)
+                return Landshaft._hd(self.x, q, eps=step/10)
+            
+            # hd_v = lambda q: Landshaft._hd(self.x, q, eps=step/10)
+
+            with Pool(processes=cpu_count()) as pool:
+                res = list(pool.map(hd_v, quantiles, chunksize=10))
+            # self.hds = hd_v(quantiles)
+            self.hds = np.array(res)
+        else:
+            pass
 
     def get_ground(self) -> None:
         """
