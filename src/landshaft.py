@@ -126,7 +126,10 @@ class Landshaft:
         """
         lowland_ponds = [pond for pond in self.ponds if pond.is_lowland()]
         if not lowland_ponds:
-            modes = ExtremumArray([self.peaks[np.argmax(self.peaks.get_bins_height())[0]]])
+            modes = ExtremumArray([self.peaks[np.argmax(self.peaks.get_bins_height())]
+                                   if isinstance(self.peaks[np.argmax(self.peaks.get_bins_height())], Extremum ) 
+                                   else self.peaks[np.argmax(self.peaks.get_bins_height())]
+                                   ])
             min_between_modes = None
         else:    
             between_lowland = np.array(
