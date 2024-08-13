@@ -176,7 +176,7 @@ class Landshaft:
             ])
 
         self.modes, self.min_between_modes = modes, min_between_modes
-    
+
     def build_landshaft(self) -> None:
         """
         The main function of class providing general logic of algorithm.
@@ -286,9 +286,9 @@ class Landshaft:
         colors = [(0, 0, 1, 0.6) if pond.is_lowland() else (0, 0, 1, 0.2) for pond in self.ponds]
         
         ax.bar(bins_x, heights, widths, color=colors, align='edge')
-        ax.scatter(modes.get_bins_start(), modes.get_bins_height(), marker="*", color="green")
+        ax.scatter(modes.get_bins_start() + modes.get_bins_width()/2, modes.get_bins_height(), marker="*", color="green")
         if not (mins) is None:
-            ax.scatter(mins.get_bins_start(), mins.get_bins_height(), marker="*", color="red")
+            ax.scatter(mins.get_bins_start() + mins.get_bins_width()/2, mins.get_bins_height(), marker="*", color="red")
         
         plt.draw()
         plt.pause(0.1)
