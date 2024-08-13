@@ -170,3 +170,7 @@ docs/build/doctrees
 source/
 
 docs.sh
+
+Dockerfile
+
+docker_example.txt

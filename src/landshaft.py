@@ -71,18 +71,15 @@ class Landshaft:
         if platform.system() != "Windows":
             global hd_v
             def hd_v(q):
-                # hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q, eps=step/10))
-                print(q)
                 return Landshaft._hd(self.x, q, eps=step/10)
             
-            # hd_v = lambda q: Landshaft._hd(self.x, q, eps=step/10)
-
             with Pool(processes=cpu_count()) as pool:
                 res = list(pool.map(hd_v, quantiles, chunksize=10))
-            # self.hds = hd_v(quantiles)
+
             self.hds = np.array(res)
         else:
-            pass
+            hd_v = np.vectorize(lambda q: Landshaft._hd(self.x, q, eps=step/10))
+            self.hds = hd_v(quantiles)
 
     def get_ground(self) -> None:
         """
@@ -257,7 +254,10 @@ class Landshaft:
             plt.draw()
             plt.pause(0.1)
             if not is_notebook():
-                input("Press [enter] to continue.")
+                try:
+                    input("Press [enter] to continue.")
+                except EOFError:
+                    plt.savefig("peaks_and_lowlands.png")
             plt.close()
         else:
             return plt.gca()
@@ -292,7 +292,10 @@ class Landshaft:
         plt.draw()
         plt.pause(0.1)
         if not is_notebook():
-            input("Press [enter] to continue.")
+            try:
+                input("Press [enter] to continue.")
+            except EOFError:
+                plt.savefig("peaks_and_lowlands.png")
         plt.close()
 
 def is_notebook() -> bool:
