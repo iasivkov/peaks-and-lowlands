@@ -93,6 +93,7 @@ class Landshaft:
         )
         # handling equal hds
         idxs = (self.hds[1:] - self.hds[:-1]) > 1e-8 * self.hds[:-1].mean()
+        print(idxs)
         vals = vals[idxs]
         densities = densities[idxs]
         widths = widths[idxs]
