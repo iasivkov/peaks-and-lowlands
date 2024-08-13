@@ -85,11 +85,18 @@ class Landshaft:
         """
         Create Ground object with bins defined by quantiles.
         """
+        
         vals, densities, widths = (
             self.hds[:-1],
             1 / (self.hds[1:] - self.hds[:-1]) / len(self.hds[1:]),
             (self.hds[1:] - self.hds[:-1])
         )
+        # handling equal hds
+        idxs = (self.hds[1:] - self.hds[:-1]) > 1e-8 * self.hds[:-1].mean()
+        vals = vals[idxs]
+        densities = densities[idxs]
+        widths = widths[idxs]
+
         self.ground = Ground(np.array([Bin(val, width, height) for val, width, height in zip(vals, widths, densities)]))
 
     def get_extremums(self) -> None:
