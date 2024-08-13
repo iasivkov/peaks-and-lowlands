@@ -112,7 +112,7 @@ class Landshaft:
             idxs = np.concatenate([np.array([0]), idxs])
             signs = np.concatenate([np.array([1]), signs]) 
         if density_diff[-1] > 0:
-            idxs = np.concatenate([idxs, np.array([len(density_diff)+1])])
+            idxs = np.concatenate([idxs, np.array([len(density_diff)])])
             signs = np.concatenate([signs, np.array([1])])
         self.extremums = ExtremumArray(np.array([Extremum(bin, sign) for bin, sign in zip(self.ground[idxs].bins, signs[idxs - 1])]))
 
