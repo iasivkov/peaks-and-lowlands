@@ -287,7 +287,8 @@ class Landshaft:
         
         ax.bar(bins_x, heights, widths, color=colors, align='edge')
         ax.scatter(modes.get_bins_start(), modes.get_bins_height(), marker="*", color="green")
-        ax.scatter(mins.get_bins_start(), mins.get_bins_height(), marker="*", color="red")
+        if not (mins) is None:
+            ax.scatter(mins.get_bins_start(), mins.get_bins_height(), marker="*", color="red")
         
         plt.draw()
         plt.pause(0.1)
