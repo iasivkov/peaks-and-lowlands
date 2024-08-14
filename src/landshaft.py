@@ -103,6 +103,11 @@ class Landshaft:
         """
         Identify extremum points in the ground object.
         """
+        bins_height = self.ground.get_bins_height()
+        if len(bins_height) == 1:
+             self.extremums = ExtremumArray(np.array([Extremum(bin, sign) for bin, sign in zip(self.ground.bins, [1])]))
+             return None
+        
         density_diff = np.diff(self.ground.get_bins_height())
         is_turn = (np.sign(density_diff[1:]) * np.sign(density_diff[:-1]) <= 0) & (np.sign(density_diff[:-1]) != 0)
         idxs = np.nonzero(is_turn)[0] + 1
