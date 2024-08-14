@@ -112,13 +112,14 @@ class Landshaft:
         is_turn = (np.sign(density_diff[1:]) * np.sign(density_diff[:-1]) <= 0) & (np.sign(density_diff[:-1]) != 0)
         idxs = np.nonzero(is_turn)[0] + 1
         signs = np.sign(density_diff[:-1])
+        signs = np.concatenate([np.array([1]), signs]) 
+        signs = np.concatenate([signs, np.array([1])])
         if density_diff[0] < 0:
             idxs = np.concatenate([np.array([0]), idxs])
-            signs = np.concatenate([np.array([1]), signs]) 
         if density_diff[-1] > 0:
             idxs = np.concatenate([idxs, np.array([len(density_diff)])])
-            signs = np.concatenate([signs, np.array([1])])
-        self.extremums = ExtremumArray(np.array([Extremum(bin, sign) for bin, sign in zip(self.ground[idxs].bins, signs[idxs - 1])]))
+            
+        self.extremums = ExtremumArray(np.array([Extremum(bin, sign) for bin, sign in zip(self.ground[idxs].bins, signs[idxs])]))
 
     def get_peaks_and_ponds(self) -> None:
         """
